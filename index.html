@@ -1,14 +1,14 @@
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 <title>Piano</title>
 <style>
     * {
     float: left;
     }
   body {
-    background-image: url('https://images.unsplash.com/photo-1520699514109-b478c7b48d3b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: -210%;
     background-color: black;
     margin: 0px;
   }
@@ -34,27 +34,40 @@
   body::-webkit-scrollbar-corner {
     background-color: black;
   }
+  #carpet {
+    position: fixed;
+    background-image: url('https://images.unsplash.com/photo-1520699514109-b478c7b48d3b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    width: 1280px;
+    height: 875px;
+    z-index: -4;
+  }
+  .main {
+    width: 1200px;
+    height: 990px;
+  }
   #keyboard {
+    position: fixed;
+  }
+  #backboard {
     float: left;
     position: absolute;
     background-color: black;
     width: 119%;
-    height: 74%;
+    height: 62.5%;
     left: 0px;
     z-index: -2;
     border-bottom-style: solid;
     border-bottom-width: 0px;
     border-bottom-color: rgb(44, 33, 25);
   }
-  #bench {
-    position: fixed;
-    top: 700px;
-    left: 18%;
-    width: 800px;
-    height: 500px;
-    border-radius: 5px;
-    background-color: dimgray;
-    background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  #stump {
+    position: relative;
+    left: 400px;
+    bottom: 190px;
+    width: 400px;
+    height: auto;
+    z-index: -1;
   }
   #woodbar {
     position: static;
@@ -116,12 +129,54 @@
   #transparent {
     background-color: transparent;
   }
+  button {
+    position: fixed;
+    left: 30px;
+    bottom: 10px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: large;
+    background-color: rgb(54, 37, 25);
+    background-image: url('https://images.unsplash.com/photo-1523034572918-be25535ca417?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM0fHx3b29kfGVufDB8fDB8fHwy');
+    background-size: cover;
+    color: rgb(29, 23, 23);
+    border-color: rgb(29, 23, 23);
+  }
+  .bench {
+    position: absolute;
+    top: 840px;
+    left: 18%;
+    width: 800px;
+    height: 240px;
+    border-radius: 5px;
+    background-color: dimgray;
+    background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    z-index: -1;
+  }
+  .invisible {
+    z-index: -5;
+    background-color: blueviolet;
+  }
 </style>
+<script>
+  function myFunction() {
+    var x = document.getElementById("stump");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+  }
+
+  var element = document.getElementById("bench");
+    element.classList.toggle("bench");
+  }
+</script>
   </head>
 
 <body>
-  <div id="keyboard"></div>
-  <div id="bench"></div>
+    <div class="main">
+  <div id="carpet"></div>
+<div id="keyboard">
+  <div id="backboard"></div>
   <div id="woodbar"></div>
   <div id="woodbarshadow"></div>
 
@@ -163,5 +218,18 @@
         <div class="blackkeys" id="transparent"></div>
         <div class="blackkeys"></div>
     </div>
+</div>
+</div>
+
+    <img src="Stump with transparent background.png" id="stump">
+    <div id="bench"></div>
+
+
+    <button onclick="myFunction()">Your Seat:</button>
   </body>
 </html>
+
+
+<!--
+
+-->
