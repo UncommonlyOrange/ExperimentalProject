@@ -1,22 +1,167 @@
 <html>
-
   <head>
-<title>Webpage</title>
+<title>Piano</title>
 <style>
+    * {
+    float: left;
+    }
   body {
-    background-color: tan;
+    background-image: url('https://images.unsplash.com/photo-1520699514109-b478c7b48d3b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: -210%;
+    background-color: black;
+    margin: 0px;
+  }
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+  }
+  body::-webkit-scrollbar-track {
+    background: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkorchid;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-image: radial-gradient(black, transparent);
+    background-color: darkorchid;
+    border-radius: 50px;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background-image: radial-gradient(black, transparent);
+    background-color: darkmagenta;
+  }
+  body::-webkit-scrollbar-corner {
+    background-color: black;
+  }
+  #keyboard {
+    float: left;
+    position: absolute;
+    background-color: black;
+    width: 119%;
+    height: 74%;
+    left: 0px;
+    z-index: -2;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    border-bottom-color: rgb(44, 33, 25);
+  }
+  #bench {
+    position: fixed;
+    top: 700px;
+    left: 18%;
+    width: 800px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: dimgray;
+    background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  #woodbar {
+    position: static;
+    background-image: url('https://images.unsplash.com/photo-1601149842860-b39ad3f891fb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fHdvb2R8ZW58MHx8MHx8fDI%3D');
+    background-size: auto;
+    width: 120%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    z-index: auto;
+  }
+  #woodbarshadow {
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, transparent 35%, black 60%, transparent 80%, black 100%);
+    width: 120%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    z-index: 4;
+  }
+  .black {
+    position: relative;
+    top: -549px;
+    left: 40px;
+  }
+  .white {
+    position: relative;
+    width: 120%;
   }
   .blackkeys {
     background-color: black;
-    width: 50px;
-    height: 250px;
+    width: 66px;
+    height: 365px;
+    margin: 9px;
+    margin-top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+  }
+  .blackkeys:hover {
+    background-color: darkslategrey;
+  }
+  .blackkeys:active {
+    background-color: darkcyan;
+  }
+  .whitekeys {
+    background-color: lightyellow;
+    width: 80px;
+    height: 545px;
+    margin: 2px;
+    position: relative;
+  }
+  .whitekeys:hover {
+    background-color: lavenderblush;
+  }
+  .whitekeys:active {
+    background-color: lightpink;
+  }
+  #transparent {
+    background-color: transparent;
   }
 </style>
   </head>
-  <body>
-<div>
-  <div class="blackkeys"></div>
-</div>
-  </body>
 
+<body>
+  <div id="keyboard"></div>
+  <div id="bench"></div>
+  <div id="woodbar"></div>
+  <div id="woodbarshadow"></div>
+
+  <div class="white">
+    <div class="whitekeys"><a href=""></a></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+    <div class="whitekeys"></div>
+      </div>
+
+    <div class="black">
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys" id="transparent"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys" id="transparent"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys" id="transparent"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys"></div>
+        <div class="blackkeys" id="transparent"></div>
+        <div class="blackkeys"></div>
+    </div>
+  </body>
 </html>
